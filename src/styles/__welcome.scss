@@ -1,0 +1,21 @@
+.welcomeScreen{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b5c53;
+
+    .loadingWrapper{
+        display: flex;
+        align-items: center;
+        // position: relative;
+        // height: inherit;
+        // width: inherit;
+
+        .loading{
+            color:white;
+            font-size:  2rem;
+            font-weight: bolder;
+        }
+    }
+}

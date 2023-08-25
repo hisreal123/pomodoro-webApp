@@ -1,0 +1,21 @@
+
+@import "./styles/_welcome";
+@import "./styles/_spinner";
+@import "./styles/_Timer";
+@import "./styles/_Navigation";
+@import "./styles/_Home";
+@import "./styles/Task/_Task";
+
+
+
+// modals
+@import "./styles/Modal/_TaskModal";
+
+
+*{
+  padding: 0;
+  margin: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: background-color .6s linear;
+}

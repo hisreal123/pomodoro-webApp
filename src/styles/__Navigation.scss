@@ -1,0 +1,57 @@
+@import "./mixins/_glass-effect";
+
+
+.Navigation{
+      background-color: transparent;
+      height:  fit-content;
+      background-color: inherit;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0 ;
+      border-bottom:  1px solid #04423b36;
+
+      //icons
+      .left{
+   span {
+     background-color: white;
+     border-radius:  100%;
+
+     .icons{
+       color: transparent;
+       font-size: 1.5rem;;
+      }
+
+}
+
+
+.title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+
+}
+.right{
+    display: flex;
+    // align-items: center;
+
+    .icons-wrapper{
+      cursor: pointer;
+      padding: 3px;
+      // background-color:inherit;
+      height: fit-content;
+      margin-right:  10px;
+      padding:  10px;
+      border-radius: px;
+      @include glass-effect(10px, true);
+
+      .icons{
+        color: white;
+        display: block;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
