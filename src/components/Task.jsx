@@ -1,15 +1,20 @@
 
 import { SlOptionsVertical } from "react-icons/sl"
+import { IoIosAddCircle } from "react-icons/io"
 import TaskModal from "./Modal/TaskModal"
 import { modalContext } from "../features/modalContext"
 import { useContext } from "react"
-import AddTask from "./AddTask"
+import AddTaskForm from "./AddTaskForm"
 
 
 function Task() {
 
     const showTaskModal = useContext(modalContext)
     const setShowTaskModal = useContext(modalContext)
+    const taskForm = useContext(modalContext)
+    const setTaskForm = useContext(modalContext)
+
+    // console.log(setTaskForm.setTaskForm)
 
     const handleShowModal = () => {
         setShowTaskModal.setShowTaskModal(!showTaskModal.showTaskModal)
@@ -18,7 +23,6 @@ function Task() {
     return (
         <>
             <div className="taskWrapper">
-                <TaskModal />
                 <div className="TaskHolder">
                     <p className="justTask"> Task </p>
 
@@ -28,9 +32,24 @@ function Task() {
                             className="taskOptions"
                             onClick={handleShowModal} />
 
+                        <TaskModal />
                     </div>
+
                 </div>
-                <AddTask />
+
+                {!taskForm.taskForm ? (
+                    <button className="AddTask"
+                        onClick={() => setTaskForm.setTaskForm(!taskForm.taskForm)}>
+                        <span>
+                            <IoIosAddCircle className="icon" />
+                        </span>
+                        <h5>Add Task</h5>
+                    </button>
+
+                ) : (
+                    <AddTaskForm />
+                )}
+
             </div>
         </>
     )

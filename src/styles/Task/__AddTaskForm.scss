@@ -1,0 +1,147 @@
+
+// main style
+.AddTaskForm{
+    // width: 80%;
+    // margin:  0 auto;
+    position: relative;
+    // margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 20px 20px 0 15px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    form{
+        .inputTitle,
+        .inputCount,
+        .addNote,
+        .addNoteBtn,
+        .addProjectBtn,
+        .cancleTask,
+        .SaveTask
+        {
+            border: 0;
+        }
+
+        .inputCount,
+        .addNote,
+        .formBtns{
+            background-color: #8f787c15;
+        }
+
+        display: flex;
+        flex-direction: column;
+
+        .inputTitle{
+            padding: 15px 3px;
+            font-size: 1.4rem;
+            font-style: italic;
+            font-weight: bolder;
+            color: #161616bb;
+
+            &::placeholder{
+                font-size: 1.4rem;
+                color: #8f787c59;
+                font-weight: bolder;
+            }
+        }
+
+        .addNote{
+            margin: 15px 0;
+            padding: 10px 5px;
+            border-radius: 5px;
+
+             &::placeholder{
+                font-size: .9rem;
+                color: #8f787c3d;
+            }
+        }
+
+        .countSection{
+            display: flex;
+            // margin-bottom: 10px;
+            .inputCount{
+                width: 10%;
+                padding: 10px ;
+
+            }
+
+            .increaseCount,
+            .reduceCount{
+                background-color: white;
+                border:  1px solid lightgrey;
+                padding: 8px;
+                border-radius: 6px;
+                box-shadow:  0 2px 5px #1d1c1c3b;
+
+                &:active{
+                    box-shadow: none;
+                }
+            }
+
+            .increaseCount{
+                margin: 0 5px;
+            }
+        }
+
+        .addNoteWrapper{
+
+            .addNoteBtn,
+            .addProjectBtn
+            {
+                text-decoration: underline;
+                color:  rgba(29, 28, 28, 0.363);
+                font-size: .9rem;
+                font-weight: bold;
+                background-color: white;
+                cursor: pointer;display: block;
+
+                &:active,
+                &:hover{
+                    color:  rgba(29, 28, 28, 0.493);
+                }
+            }
+
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+             .addNoteBtn{
+                margin-right: 7px;
+             }
+        }
+
+
+        .formBtns{
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 5px;
+
+            .cancleTask,
+            .SaveTask{
+                padding: 10px 20px;
+                font-weight: bold;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .cancleTask{
+                background-color: #16161617;
+                margin-right: 10px;
+
+                &:hover{
+                background-color: rgba(0, 0, 0, 0.356);
+                }
+            }
+
+            .SaveTask{
+            background-color: rgba(0, 0, 0, 0.842);
+            color: white;
+
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.527);
+            }
+        }
+        }
+    }
+}

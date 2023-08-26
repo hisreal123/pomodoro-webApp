@@ -5,6 +5,7 @@
 @import "./styles/_Navigation";
 @import "./styles/_Home";
 @import "./styles/Task/_Task";
+@import "./styles/Task/_AddTaskForm";
 
 
 
@@ -16,6 +17,7 @@
   padding: 0;
   margin: 0;
   margin: 0;
-  overflow: hidden;
-  transition: background-color .6s linear;
+  // overflow: hidden;
+  transition: background-color .3s linear;
+  outline: none;
 }

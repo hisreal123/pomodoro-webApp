@@ -31,11 +31,14 @@ function App() {
 
   // Modals
   const [showTaskModal, setShowTaskModal] = useState(false)
+  const [taskForm, setTaskForm] = useState(false)
 
 
   const allModalStates = {
     showTaskModal,
-    setShowTaskModal
+    setShowTaskModal,
+    taskForm,
+    setTaskForm
   }
 
 
