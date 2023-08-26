@@ -1,5 +1,5 @@
 @mixin glass-effect ($radius, $bgColor){
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: #ffffff0a;
   border-radius: $radius;
   // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(0px);

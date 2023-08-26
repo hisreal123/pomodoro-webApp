@@ -4,7 +4,8 @@
 .taskWrapper{
     position: relative;
     margin-top:  30px;
-    // height: fit-content;
+    // padding-bottom:  30px;
+    // min-height: 100%;
 
 
     .TaskHolder{
@@ -28,6 +29,30 @@
                 color: white !important;
                 padding: 5px;
                 @include glass-effect(5px, true);
+        }
+    }
+
+    .AddTask{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        width: 100%;
+        padding: 20px ;
+        border: 2px dashed #36343421;
+        @include glass-effect(0, true);
+
+        color:  rgba(255, 255, 255, 0.432);
+
+        .icon{
+            margin-right: 5px;
+            width: fit-content;
+            font-size: x-large;
+        }
+
+        h5{
+            font-size: larger;
         }
     }
 
