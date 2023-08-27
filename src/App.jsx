@@ -12,7 +12,7 @@ function App() {
 
   // themes
   const [theme, setTheme] = useState("#0b5c53")
-  const [pomodoro, setPomodoro] = useState("25:00")
+  const [pomodoro, setPomodoro] = useState("00:04")
   const [shortBreak, setShortBreak] = useState("05:00")
   const [longBreak, setLongBreak] = useState("15:00")
 
