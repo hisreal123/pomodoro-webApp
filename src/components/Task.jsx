@@ -26,12 +26,10 @@ function Task() {
                 <div className="TaskHolder">
                     <p className="justTask"> Task </p>
 
-
                     <div className="kkWapper">
                         <SlOptionsVertical
                             className="taskOptions"
                             onClick={handleShowModal} />
-
                         <TaskModal />
                     </div>
 
@@ -45,11 +43,9 @@ function Task() {
                         </span>
                         <h5>Add Task</h5>
                     </button>
-
                 ) : (
                     <AddTaskForm />
                 )}
-
             </div>
         </>
     )
