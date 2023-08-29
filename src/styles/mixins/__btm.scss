@@ -1,0 +1,20 @@
+
+@mixin Btm{
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    h4{
+        color: white;
+        font-weight: lighter ;
+        margin-bottom: 10px;
+    }
+
+    a{
+        color: rgba(255, 255, 255, 0.644);
+        font-size: .9rem;
+        &:hover{
+            color: white;
+        }
+
+    }
+}

@@ -1,0 +1,149 @@
+@import './mixins/_container';
+@import './mixins/_btm';
+
+
+
+.Login{
+    background-color: #0b5c53;
+    min-height: 100vh;
+
+
+    .Container{
+        @include Container;
+        text-align: center;
+        padding-top:  30px;
+
+        .top{
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            margin-bottom: 20px;
+
+            .logo{
+                margin-bottom: 20px;
+                font-size: 2.4rem;
+                display: block;
+                color: white;
+                text-decoration: none;
+            }
+        }
+
+        .LoginForm{
+            width: 60%;
+            margin:  0 auto;
+            position: relative;
+            background-color: #fff;
+            padding:  30px 20px;
+            box-shadow: 0 0 2px gray;
+            border-radius: 10px;
+
+
+            .googleAuth{
+                display:  flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                padding:  8px 5px;
+                border-radius: 10px;
+                border: 0;
+                box-shadow: 0 0 2px gray;
+                background-color: white;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: rgba(187, 187, 187, 0.192);
+                }
+                .gIcon{
+                    margin-right: 8px;
+                    font-size: 1.5rem;
+                }
+
+                .gWord{
+                    font-size: 1rem;
+                    font-weight: bold;
+                    color: rgba(2, 2, 2, 0.541);
+                }
+            }
+
+            .divider{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 13px 0;
+
+                .line{
+                    height: 1px;
+                    width: 90%;
+                    background-color: rgba(66, 64, 64, 0.164);
+                }
+                .or{
+                    color: rgba(66, 64, 64, 0.801);
+                    margin:  0 5px;
+                }
+            }
+
+            .formInputs{
+                display: flex;
+                flex-direction: column;
+
+                Label{
+                    color: rgba(66, 64, 64, 0.685);
+                    font-weight: bold;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-size: .8rem;
+                    align-self: flex-start;
+                    margin-bottom: 5px;
+
+                    &:nth-last-child(2){
+                        margin-top: 30px;
+                    }
+                }
+
+
+                input{
+                    border: 0;
+                    background-color: rgba(66, 64, 64, 0.103);
+                    border-radius: 10px;
+                    padding: 15px 5px;
+                    color:rgba(2, 2, 2, 0.541);
+                    font-size: 1rem;
+
+                    &::placeholder{
+                        font-size: 1rem;
+                    }
+                }
+
+            }
+
+            .submitButton{
+                position: relative;
+                width: 100%;
+                background-color: rgb(22, 17, 17);
+                margin: 20px 0;
+                padding: 15px 5px;
+                border-radius:  5px;
+                border: 0;
+                font-size: 1rem;
+                box-shadow:  0 0 2px gray ;
+                color: white;
+                cursor: pointer;
+            }
+
+            .forgotPassword{
+                text-decoration: underline;
+                color:  rgba(41, 41, 41, 0.5);
+                font-weight: bolder;
+
+                &:hover{
+                    color:  rgba(41, 41, 41, 0.774);
+                }
+            }
+
+        }
+
+
+            .Btm{
+                @include Btm;
+            }
+    }
+}
