@@ -1,0 +1,38 @@
+@import './_settingsOption';
+
+
+.settings{
+
+    background-color: rgba(66, 64, 64, 0.473);
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    height: 100%;
+
+    .a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .settingOptions{
+            @include settingsOption;
+            position: relative;
+            // top: 10%;
+        }
+    }
+
+    .overlay{
+        background-color: rgba(66, 64, 64, 0.164);
+  }
+}
+
+.show{
+    display: block;
+}
+.hidden{
+    display: none;
+}

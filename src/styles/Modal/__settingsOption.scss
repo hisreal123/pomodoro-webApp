@@ -1,0 +1,140 @@
+@import '../components/_Switch';
+
+@mixin  settingsOption {
+            background-color:  white;
+            width: 50%;
+            margin:  0 auto;
+            border-radius: 10px;
+            z-index: 20;
+
+            .head{
+                display: flex;
+                padding:  20px 15px ;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom:  1px solid rgba(61, 59, 59, 0.253);
+
+                h4,
+                .closeIcon{
+                    font-weight: bold;
+                    color: rgba(61, 59, 59, 0.836);
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                }
+
+                .closeIcon{
+                    font-size: 1.4rem;
+                    cursor: pointer;
+                }
+            }
+
+            // multiple Config
+
+            .timer,
+            .task{
+                padding:  20px 15px ;
+                border-bottom:  1px solid rgba(61, 59, 59, 0.253);
+            }
+            .timer .d,
+            .task .d{
+                display: flex;
+                align-items: center;
+            }
+
+            .timer .d h4,
+            .timer .dd h4,
+            .task .d h4 {
+                margin-left: 3px;
+                font-weight: bold;
+                color: rgba(61, 59, 59, 0.836);
+                font-family: 'Lucida Sans',
+            }
+
+
+            .timer .bb,
+            .task .bb {
+                margin: 20px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+
+            .timer .bb h3,
+            .task .bb h3{
+                font-weight: bold;
+                font-size: 1rem;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: rgba(10, 10, 10, 0.466);
+            }
+
+            .timer{
+                    .dd{
+                        h4{
+                          margin-top: 20px;
+                        }
+                    }
+
+                     .inputValues{
+                        display: flex;
+                        margin-top: 10px;
+
+                            input{
+                                position: relative;
+                                width:  calc(100% / 3);
+                                margin: 0 5px;
+                                background-color: rgba(46, 46, 46, 0.103);
+                                padding:  10px 5px;
+                                border: 0;
+                                border-radius: 5px;
+                            }
+                        }
+
+                .bb{
+                    .switch{
+                        @include Switch;
+                    }
+                    input{
+                        position: relative;
+                        width:  calc(100% / 3);
+                        margin: 0 5px;
+                        background-color: rgba(46, 46, 46, 0.103);
+                        padding:  10px 5px;
+                        border: 0;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .task{
+               .bb{
+                .switch{
+                        @include Switch;
+                    }
+               }
+            }
+
+            @media screen and (max-width: 430px) {
+                width: 80%;
+                // head
+            }
+
+
+            .ok{
+                background-color: rgba(131, 130, 130, 0.144);
+                padding: 10px ;
+                border: 0;
+                display: flex;
+
+                .SubmitUpdate{
+                    padding: 10px 25px;
+                    align-self: flex-end;
+                    border: 0;
+                    background-color: rgba(0, 0, 0, 0.904);
+                    color: white;
+                    font-size: 1rem;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+
+        }

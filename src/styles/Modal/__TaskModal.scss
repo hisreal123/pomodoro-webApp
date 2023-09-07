@@ -5,8 +5,35 @@
     top: 90%;
     z-index: 2;
     background-color: white;
-    padding:  10px;
-    height: 100px;
+    height: fit-content;
+    border-radius:  5px ;
+
+    .wrap{
+        position: relative;
+        ul{
+             padding: 5px 0 ;
+             position: relative;
+             overflow: hidden;
+
+            .opt-fun{
+                display: flex;
+                align-items: center;
+                position: relative;
+                width: 100%;
+                padding: 10px;
+
+                &:hover{
+                    background-color: rgba(196, 196, 196, 0.288);
+                }
+
+                .icon{
+                    position: relative;
+                    // margin-right: 10px;
+                    // padding-right:3px;
+                }
+            }
+        }
+    }
 }
 
 // dynamic class

@@ -1,31 +1,33 @@
 import { useContext, useState } from "react"
-import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi"
+// import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi"
 import { IoMdAdd } from "react-icons/io"
 import { modalContext } from "../features/modalContext"
 
 function AddTaskForm() {
 
 
-    const taskForm = useContext(modalContext)
-    const setTaskForm = useContext(modalContext)
-    const close = taskForm.taskForm
-
+    const { taskForm, setTaskForm } = useContext(modalContext)
 
     const [title, setTitle] = useState("")
-    const [count, setCount] = useState(1)
+    // const [count, setCount] = useState(1)
     const [note, setNote] = useState("")
 
     const [showNote, setShowNote] = useState(false)
 
     const handleFormClose = (e) => {
         e.preventDefault()
-        setTaskForm.setTaskForm(!taskForm.taskForm)
+        setTaskForm(!taskForm)
+    }
+
+    const handleSubmitTask = (e) => {
+        e.preventDefault()
+        setTaskForm(!taskForm)
     }
 
     return (
         <>
-            <section className={`AddTaskForm ${close ? 'show' : 'hidden'}`}>
-                <form action="">
+            <section className={`AddTaskForm ${taskForm ? 'show' : 'hidden'}`}>
+                <form action="" onSubmit={handleSubmitTask}>
                     <input
                         type="text"
                         value={title}
@@ -34,7 +36,7 @@ function AddTaskForm() {
                         onChange={(e) => { setTitle(e.target.value) }}
                     />
 
-                    <div className="countSection">
+                    {/* <div className="countSection">
                         <input
                             className="inputCount"
                             type="number"
@@ -42,7 +44,7 @@ function AddTaskForm() {
                         />
                         <BiSolidUpArrow className="increaseCount" onClick={() => { setCount(count + 1) }} />
                         <BiSolidDownArrow className="reduceCount" onClick={() => { setCount(count - 1) }} />
-                    </div>
+                    </div> */}
 
 
                     {showNote && (
@@ -68,8 +70,6 @@ function AddTaskForm() {
                         >Cancel</button>
                         <button className="SaveTask" type="submit">Save </button>
                     </div>
-
-
                 </form>
             </section >
         </>

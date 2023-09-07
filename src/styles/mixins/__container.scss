@@ -1,5 +1,12 @@
 
 @mixin Container {
+
+    // for mobile
     margin: 0 auto;
-    width: 90%;
+    width: 70%;
+
+
+    @media screen and (max-width: 600px) {
+         width: 90%;  // small devices && below
+      }
 }

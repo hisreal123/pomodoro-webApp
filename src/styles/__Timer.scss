@@ -37,7 +37,11 @@
         font-size: 2rem;
         background-color: transparent;
         border: none;
-        color: white
+        color: white;
+
+        //  @media screen and (min-width: 600px) {
+        //   font-size: 2.4rem; // meduin >>>>>
+        //  }
       }
       .startButton{
         width: fit-content;
@@ -85,7 +89,6 @@
       width: 60%;
     }
 
-
     .SwitchButton{
       padding: 4px 10px;
       background-color: transparent;
@@ -95,6 +98,10 @@
       font-weight: bold;
       font-size: 1rem;
       cursor: pointer;
+
+        @media screen and (max-width: 600px) {
+          font-size: .8rem;  // small devices && below
+        }
 
       &:hover{
 

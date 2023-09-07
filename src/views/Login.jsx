@@ -6,7 +6,6 @@ function Login() {
 
     const navigate = useNavigate()
 
-
     return (
         <>
             <section className="Login">
