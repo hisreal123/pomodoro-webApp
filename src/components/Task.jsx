@@ -7,6 +7,8 @@ import { useContext } from "react"
 import AddTaskForm from "./AddTaskForm"
 import { useAllTasks } from "../core/hooks"
 import { MdOutlineDone } from "react-icons/md"
+import { CiMenuKebab } from "react-icons/ci"
+
 
 
 function Task() {
@@ -47,11 +49,15 @@ function Task() {
                 {tasks?.map(task => (
                     <>
                         <div className="taskList" key={task.id}>
-                            <MdOutlineDone className="taskDone" />
-                            <h4 className="title">{task.title}</h4>
+                            <div className="inWrap">
+                                <MdOutlineDone className="taskDone" />
+                                <h4 className="title">{task.title}</h4>
+                            </div>
+                            <CiMenuKebab />
                         </div>
                     </>
                 ))}
+
                 {/* End of all task */}
 
                 {!taskForm ? (
