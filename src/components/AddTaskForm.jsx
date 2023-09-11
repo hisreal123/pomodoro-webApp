@@ -1,27 +1,47 @@
 import { useContext, useState } from "react"
-// import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi"
 import { IoMdAdd } from "react-icons/io"
 import { modalContext } from "../features/modalContext"
+import { useAddTask } from "../core/hooks"
+import { v1 as uuidv1 } from 'uuid';
+
 
 function AddTaskForm() {
 
-
+    const { mutate: createTask } = useAddTask();
     const { taskForm, setTaskForm } = useContext(modalContext)
 
-    const [title, setTitle] = useState("")
-    // const [count, setCount] = useState(1)
-    const [note, setNote] = useState("")
+    const [taskState, setTaskState] = useState({
+        title: "",
+        note: ""
+    })
 
     const [showNote, setShowNote] = useState(false)
 
-    const handleFormClose = (e) => {
+    const handleSubmitTask = async (e) => {
         e.preventDefault()
         setTaskForm(!taskForm)
-    }
 
-    const handleSubmitTask = (e) => {
-        e.preventDefault()
-        setTaskForm(!taskForm)
+        const title = taskState.title
+        const note = taskState.note
+
+        if (title) {
+
+            const newTask = {
+                id: uuidv1(),
+                title: title,
+                completed: false,
+                note: note
+            };
+
+            try {
+                await createTask(newTask);
+                console.log(' Task sent  .....');
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        // setTaskState({ ...taskState });
     }
 
     return (
@@ -30,30 +50,22 @@ function AddTaskForm() {
                 <form action="" onSubmit={handleSubmitTask}>
                     <input
                         type="text"
-                        value={title}
+                        value={taskState.title || ""}
                         className="inputTitle"
                         placeholder="What are you working on?"
-                        onChange={(e) => { setTitle(e.target.value) }}
+                        onChange={e => {
+                            setTaskState({ ...taskState, title: e.target.value })
+                        }}
                     />
 
-                    {/* <div className="countSection">
-                        <input
-                            className="inputCount"
-                            type="number"
-                            value={count}
-                        />
-                        <BiSolidUpArrow className="increaseCount" onClick={() => { setCount(count + 1) }} />
-                        <BiSolidDownArrow className="reduceCount" onClick={() => { setCount(count - 1) }} />
-                    </div> */}
-
-
                     {showNote && (
-
                         <textarea
                             className="addNote"
                             placeholder="Some notes..."
-                            value={note}
-                            onClick={(e) => setNote(e.target.value)}
+                            value={taskState.note || ""}
+                            onChange={(e) => {
+                                setTaskState({ ...taskState, note: e.target.value })
+                            }}
                         ></textarea>
                     )}
 
@@ -66,7 +78,10 @@ function AddTaskForm() {
                     <div className="formBtns">
                         <button
                             className="cancleTask"
-                            onClick={handleFormClose}
+                            onClick={e => {
+                                e.preventDefault()
+                                setTaskForm(!taskForm)
+                            }}
                         >Cancel</button>
                         <button className="SaveTask" type="submit">Save </button>
                     </div>

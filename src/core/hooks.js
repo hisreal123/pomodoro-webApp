@@ -30,18 +30,15 @@ export const useAllTasks = () => {
     return {data , ...rest }
 }
 
-
 export const useAddTask = () => {
     const queryClient = useQueryClient();
-
     const { data, ...rest } = useMutation({
         mutationFn : (newData) =>  addTask(newData),
-        onSuccess: (response) => {
+        onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["Todos"] })
-            toast.success('New task added successfully',response, { /* ...toast options */ })
+            toast.success('New task added successfully', { /* ...toast options */ })
     },
     onError: err => toast.error(err?.response?.data?.message || err?.message, { ...errStyles })
-
     })
 
     return {data, ...rest}

@@ -1,17 +1,28 @@
 {
-    "tasks" :
-        [
-            {
-                "id": 1,
-                "title": "Complete Project Proposal",
-                "description": "Write and finalize the project proposal for the upcoming conference.",
-                "completed": false
-            },
-            {
-                "id": 2,
-                "title": "Complete Project Proposal another ",
-                "description": "Write and finalize the project proposal for the upcoming conference.",
-                "completed": false
-            }
-        ]
+  "tasks": [
+    {
+      "id": "0b53a6f0-5088-11ee-803b-899c0ea4f90e",
+      "title": "Code",
+      "completed": false,
+      "note": "dsdssds"
+    },
+    {
+      "id": "4fda6070-5088-11ee-8f81-85567364c14f",
+      "title": "hiiii",
+      "completed": false,
+      "note": "dddddddd"
+    },
+    {
+      "id": "58693bd0-5088-11ee-8f81-85567364c14f",
+      "title": "dsdsds",
+      "completed": false,
+      "note": "dsdsdsds"
+    },
+    {
+      "id": "6cbb4290-5088-11ee-8f81-85567364c14f",
+      "title": "gggg",
+      "completed": false,
+      "note": "ggggg"
     }
+  ]
+}
